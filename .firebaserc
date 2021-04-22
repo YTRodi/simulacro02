@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "clase-a-clase": {
+      "hosting": {
+        "simulacro02": [
+          "clase-a-clase"
+        ]
+      }
+    }
+  }
+}
