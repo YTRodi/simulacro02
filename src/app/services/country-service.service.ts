@@ -1,9 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CountryServiceService {
+export class CountryService {
+  constructor(private http: HttpClient) {
+    console.log('Country service running!');
+  }
 
-  constructor() { }
+  getAllCountries() {
+    return this.http.get('https://restcountries.eu/rest/v2/all');
+  }
 }

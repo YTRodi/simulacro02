@@ -1,1 +1,69 @@
-<p>form-actor works!</p>
+<h4 class="mb-3">Alta de actor</h4>
+<form
+  class="needs-validation"
+  [formGroup]="formActor"
+  (ngSubmit)="enviarForm()"
+>
+  <div class="row g-3">
+    <div class="col-sm-6">
+      <label class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Aa"
+        formControlName="nombre"
+      />
+      <div class="invalid-feedback">El nombre es requerido.</div>
+    </div>
+
+    <div class="col-sm-6">
+      <label class="form-label">Apellido</label>
+      <input type="text" class="form-control" placeholder="Aa" />
+      <div class="invalid-feedback">El apellido es requerido.</div>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Edad</label>
+      <input type="number" class="form-control" placeholder="18" />
+      <div class="invalid-feedback">La edad es requerida.</div>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="example@gmail.com"
+      />
+      <div class="invalid-feedback">El email es requerido.</div>
+    </div>
+
+    <div class="col-12" *ngIf="paisSeleccionado">
+      <label class="form-label">Nacionalidad</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Aa"
+        formControlName="nacionalidad"
+      />
+      <div class="invalid-feedback">La nacionalidad es requerida.</div>
+    </div>
+
+    <div class="card col-12" style="max-width: 400px" *ngIf="paisSeleccionado">
+      <img
+        [src]="paisSeleccionado.flag"
+        class="card-img-top"
+        alt="image pais"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ paisSeleccionado.name }}</h5>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4" />
+
+  <button class="my-4 w-100 btn btn-primary btn-lg" type="submit">
+    Dar de alta!
+  </button>
+</form>

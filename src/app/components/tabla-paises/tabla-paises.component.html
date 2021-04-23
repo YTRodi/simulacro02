@@ -1,1 +1,20 @@
-<p>tabla-paises works!</p>
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-primary">Listado de países</span>
+  <span class="badge bg-primary rounded-pill">
+    {{ this.listaPaises.length }}
+  </span>
+</h4>
+<ul class="ul-list list-group mb-3 overflow-auto">
+  <li
+    style="cursor: pointer"
+    class="list-group-item d-flex justify-content-between lh-sm"
+    *ngFor="let pais of listaPaises"
+    (click)="seleccionarPais(pais)"
+  >
+    <div>
+      <h6 class="my-0">{{ pais.name }}</h6>
+      <small class="text-muted">{{ pais.nativeName }}</small>
+    </div>
+    <img [src]="pais.flag" alt="bandera del pais" width="60px" height="40px" />
+  </li>
+</ul>
