@@ -4,6 +4,14 @@
     {{ this.listaPaises.length }}
   </span>
 </h4>
+
+<div
+  class="d-flex justify-content-center pb-3"
+  *ngIf="listaPaises.length === 0"
+>
+  <div class="spinner-border" role="status"></div>
+</div>
+
 <ul class="ul-list list-group mb-3 overflow-auto">
   <li
     style="cursor: pointer"

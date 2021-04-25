@@ -10,23 +10,27 @@
       <p class="lead">Simulacro de parcial número 2</p>
 
       <div class="d-flex justify-content-center" *ngIf="!listaActores">
-        <div>Cargando lista de actores</div>
         <div class="spinner-border" role="status"></div>
       </div>
-      <table class="table table-striped" *ngIf="listaActores">
+
+      <table class="table table-striped" *ngIf="listaActores && tablaCabecera">
         <thead>
           <tr>
-            <th scope="col">nombre</th>
-            <th scope="col">apellido</th>
-            <th scope="col">edad</th>
-            <th scope="col">email</th>
-            <th scope="col">pais natal</th>
-            <th scope="col">bandera</th>
+            <th *ngFor="let nombreCabecera of tablaCabecera">
+              {{ nombreCabecera }}
+            </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mark</td>
+          <tr *ngFor="let actor of listaActores">
+            <td>{{ actor.apellido }}</td>
+            <td>{{ actor.countryName }}</td>
+            <td>{{ actor.edad }}</td>
+            <td>{{ actor.email }}</td>
+            <td>
+              <img [src]="actor.flagImage" alt="country image" width="30" />
+            </td>
+            <td>{{ actor.nombre }}</td>
           </tr>
         </tbody>
       </table>

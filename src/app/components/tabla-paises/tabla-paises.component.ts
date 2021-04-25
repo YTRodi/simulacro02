@@ -22,7 +22,6 @@ export class TablaPaisesComponent implements OnInit {
   ngOnInit(): void {}
 
   seleccionarPais(pais: any) {
-    // console.log(pais);
     this.eventPaisSeleccionado.emit(pais);
   }
 }
