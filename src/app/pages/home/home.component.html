@@ -8,6 +8,28 @@
       />
       <h2>Actores</h2>
       <p class="lead">Simulacro de parcial número 2</p>
+
+      <div class="d-flex justify-content-center" *ngIf="!listaActores">
+        <div>Cargando lista de actores</div>
+        <div class="spinner-border" role="status"></div>
+      </div>
+      <table class="table table-striped" *ngIf="listaActores">
+        <thead>
+          <tr>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">edad</th>
+            <th scope="col">email</th>
+            <th scope="col">pais natal</th>
+            <th scope="col">bandera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mark</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="row g-5">
