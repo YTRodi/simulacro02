@@ -27,11 +27,11 @@ export class FormActorComponent implements OnInit {
 
   constructor(private actorService: ActorService, private fb: FormBuilder) {
     this.formActor = this.fb.group({
-      nombre: new FormControl('aaaaa', [
+      nombre: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
       ]),
-      apellido: new FormControl('aaaaa', [
+      apellido: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
       ]),
@@ -40,10 +40,7 @@ export class FormActorComponent implements OnInit {
         Validators.min(18),
         Validators.max(99),
       ]),
-      email: new FormControl('aaaa@gmail.com', [
-        Validators.required,
-        Validators.email,
-      ]),
+      email: new FormControl('', [Validators.required, Validators.email]),
     });
   }
 
