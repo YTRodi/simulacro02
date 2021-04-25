@@ -35,7 +35,7 @@ export class FormActorComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
       ]),
-      edad: new FormControl(18, [
+      edad: new FormControl('', [
         Validators.required,
         Validators.min(18),
         Validators.max(99),
